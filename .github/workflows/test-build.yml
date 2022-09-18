@@ -16,7 +16,7 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app
     
     - name: Clean Build Folder
-      run: xcodebuild clean -project Sample.xcodeproj -scheme Sample
+      run: xcodebuild clean -project Sample/Sample.xcodeproj -scheme Sample
       
     - name: Build
-      run: xcodebuild Sample -project Sample.xcodeproj -scheme Sample -destination 'platform=iOS Simulator, name=iPhone 8, OS=15.0'
+      run: xcodebuild Sample -project Sample/Sample.xcodeproj -scheme Sample -destination 'platform=iOS Simulator, name=iPhone 8, OS=15.0'
