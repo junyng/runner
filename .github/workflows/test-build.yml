@@ -10,13 +10,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_14.0.0.app
-    
+    - name: Check out project
+      uses: actions/checkout@v3
+    - name: Show current version of Xcode
+      run: xcodebuild -version
     - name: Clean Build Folder
       run: xcodebuild clean -project Sample/Sample.xcodeproj -scheme Sample
-      
     - name: Build
       run: xcodebuild -project Sample/Sample.xcodeproj -scheme Sample -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0'
