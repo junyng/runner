@@ -12,9 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Bundle Dependencies
-      run: bundle install
-
     - name: CocoaPods Dependencies
       run: bundle exec pod install
     
