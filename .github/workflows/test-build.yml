@@ -1,0 +1,20 @@
+name: CI
+
+# workflow trigger
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+		# checking out our code base
+    - uses: actions/checkout@v3
+
+    - name: Bundle dependencies
+      run: bundle install
+
+    - name: CocoaPods dependencies
+      run: bundle exec pod install
