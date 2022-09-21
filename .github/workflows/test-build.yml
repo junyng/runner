@@ -16,3 +16,9 @@ jobs:
       run: xcodebuild -version
     - name: Build
       run: xcodebuild -project Sample/Sample.xcodeproj -scheme Sample -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest'
+    - name: send message
+      uses: appleboy/discord-action@master
+      with:
+        webhook_id: ${{ secrets.WEBHOOK_ID }}
+        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+        message: The ${{ github.event_name }} event triggered first step.
